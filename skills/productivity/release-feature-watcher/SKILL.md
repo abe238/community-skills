@@ -365,10 +365,10 @@ For users with an Obsidian or notes system, optionally maintain a human-readable
 When the watcher fires, include the best next action:
 
 - GitHub release asset: pick the correct OS/architecture asset.
-- Homebrew: `brew upgrade <formula-or-cask>`.
-- npm: `npm update <pkg>` or `npm install <pkg>@latest`.
-- PyPI: `pip install -U <pkg>`.
-- Docker: `docker pull <image>:<tag>`.
+- Homebrew: suggest a Homebrew upgrade command for the specific formula/cask.
+- npm: suggest the relevant package-manager update command for the specific package/version.
+- PyPI: suggest the relevant Python package update command for the specific package/version.
+- Docker: suggest pulling the specific image tag or digest.
 - AUR: `yay -Syu <pkg>`.
 - AppImage/deb/rpm/dmg/zip: link the exact release asset.
 - API/model provider: summarize docs/pricing and ask before changing config.

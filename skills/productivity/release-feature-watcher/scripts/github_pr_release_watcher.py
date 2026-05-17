@@ -21,7 +21,6 @@ Config keys:
 from __future__ import annotations
 
 import json
-import os
 import sys
 import urllib.error
 import urllib.request
@@ -36,20 +35,18 @@ def parse_time(s: str | None) -> datetime | None:
     return datetime.fromisoformat(s.replace("Z", "+00:00")).astimezone(timezone.utc)
 
 
-def github_get(path: str, token: str | None = None) -> Any:
+def github_get(path: str) -> Any:
     headers = {
         "Accept": "application/vnd.github+json",
         "User-Agent": "Hermes release-feature-watcher",
     }
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
     req = urllib.request.Request(f"https://api.github.com{path}", headers=headers)
     with urllib.request.urlopen(req, timeout=30) as resp:
         return json.load(resp)
 
 
-def latest_eligible_release(repo: str, allow_prerelease: bool, token: str | None) -> dict[str, Any] | None:
-    releases = github_get(f"/repos/{repo}/releases?per_page=20", token)
+def latest_eligible_release(repo: str, allow_prerelease: bool) -> dict[str, Any] | None:
+    releases = github_get(f"/repos/{repo}/releases?per_page=20")
     for rel in releases:
         if rel.get("draft"):
             continue
@@ -69,14 +66,13 @@ def main() -> int:
     pr_number = int(cfg["pr"])
     allow_prerelease = bool(cfg.get("allow_prerelease", False))
     require_after_merge = bool(cfg.get("require_release_after_merge", True))
-    token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
 
-    pr = github_get(f"/repos/{repo}/pulls/{pr_number}", token)
+    pr = github_get(f"/repos/{repo}/pulls/{pr_number}")
     merged_at = parse_time(pr.get("merged_at"))
     if merged_at is None:
         return 0
 
-    rel = latest_eligible_release(repo, allow_prerelease, token)
+    rel = latest_eligible_release(repo, allow_prerelease)
     if not rel:
         return 0
 
