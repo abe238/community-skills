@@ -21,10 +21,10 @@ This repository contains portable Markdown skills for AI agents.
 Hermes Agent users should install the canonical Hermes skills:
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/productivity/release-feature-watcher/SKILL.md
-hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/prompting/prompt-optimizer/SKILL.md
-hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/prompting/adversarial-prompting/SKILL.md
-hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/learning/rapid-domain-mastery/SKILL.md
+hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/release-feature-watcher/SKILL.md
+hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/prompt-optimizer/SKILL.md
+hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/adversarial-prompting/SKILL.md
+hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/rapid-domain-mastery/SKILL.md
 ```
 
 ## Cross-agent use

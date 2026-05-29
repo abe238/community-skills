@@ -6,24 +6,24 @@ Each skill ships in several forms so it works across agents: a canonical Hermes 
 
 ## Skills
 
-| Skill | Category | What it does |
-| --- | --- | --- |
-| [`release-feature-watcher`](skills/productivity/release-feature-watcher/) | productivity | Watch a feature, fix, model/API update, changelog, release, package, or PR and alert only when a specific change is actionable. |
-| [`prompt-optimizer`](skills/prompting/prompt-optimizer/) | prompting | Improve prompt effectiveness and turn basic prompts into structured high-performance prompts (XML, examples, chain of thought, roles). |
-| [`adversarial-prompting`](skills/prompting/adversarial-prompting/) | prompting | Generate multiple solutions to a complex problem, critique each for failure modes, validate fixes, and rank recommendations. |
-| [`rapid-domain-mastery`](skills/learning/rapid-domain-mastery/) | learning | Build a field map from multiple sources: mental models, debates, assumptions, prerequisites, diagnostic questions, and study sprints. |
+| Skill | What it does |
+| --- | --- |
+| [`release-feature-watcher`](skills/release-feature-watcher/) | Watch a feature, fix, model/API update, changelog, release, package, or PR and alert only when a specific change is actionable. |
+| [`prompt-optimizer`](skills/prompt-optimizer/) | Improve prompt effectiveness and turn basic prompts into structured high-performance prompts (XML, examples, chain of thought, roles). |
+| [`adversarial-prompting`](skills/adversarial-prompting/) | Generate multiple solutions to a complex problem, critique each for failure modes, validate fixes, and rank recommendations. |
+| [`rapid-domain-mastery`](skills/rapid-domain-mastery/) | Build a field map from multiple sources: mental models, debates, assumptions, prerequisites, diagnostic questions, and study sprints. |
 
 Each install section below uses `<skill>` as a placeholder — swap in any skill name from the table.
 
 ## Hermes install
 
-Install a canonical Hermes skill directly from its `SKILL.md` URL (paths are `skills/<category>/<skill>/SKILL.md`):
+Install a canonical Hermes skill directly from its `SKILL.md` URL (paths are `skills/<skill>/SKILL.md`):
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/productivity/release-feature-watcher/SKILL.md
-hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/prompting/prompt-optimizer/SKILL.md
-hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/prompting/adversarial-prompting/SKILL.md
-hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/learning/rapid-domain-mastery/SKILL.md
+hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/release-feature-watcher/SKILL.md
+hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/prompt-optimizer/SKILL.md
+hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/adversarial-prompting/SKILL.md
+hermes skills install https://raw.githubusercontent.com/abe238/community-skills/main/skills/rapid-domain-mastery/SKILL.md
 ```
 
 Or add this repository as a tap:
